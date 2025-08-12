@@ -25,7 +25,7 @@ public class GenreController {
         }
     }
 
-    @GetMapping("/genre/{id}")
+    @GetMapping("/genre/id/{id}")
     public ResponseEntity<GenreEntity> getGenreById(@PathVariable Long id) {
         GenreEntity result = genreEntityService.findById(id).orElse(null);
         if (result == null) {
@@ -38,7 +38,7 @@ public class GenreController {
         }
     }
 
-    @GetMapping("/genre/{name}")
+    @GetMapping("/genre/name/{name}")
     public ResponseEntity<GenreEntity> getGenreByName(@PathVariable String name) {
         GenreEntity result = genreEntityService.findByName(name);
         if (result == null) {

@@ -25,7 +25,7 @@ public class AuthorController {
         }
     }
 
-    @GetMapping("/author/{id}")
+    @GetMapping("/author/id/{id}")
     public ResponseEntity<AuthorEntity> getAuthorById(@PathVariable Long id) {
         AuthorEntity result = authorEntityService.findById(id).orElse(null);
         if (result == null) {
@@ -38,7 +38,7 @@ public class AuthorController {
         }
     }
 
-    @GetMapping("/author/{name}")
+    @GetMapping("/author/name/{name}")
     public ResponseEntity<AuthorEntity> getAuthorByName(@PathVariable String name) {
         AuthorEntity result = authorEntityService.findByName(name);
 

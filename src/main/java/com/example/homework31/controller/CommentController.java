@@ -25,7 +25,7 @@ public class CommentController {
         }
     }
 
-    @GetMapping("/comment/{id}")
+    @GetMapping("/comment/id/{id}")
     public ResponseEntity<CommentEntity> getCommentById(@PathVariable Long id) {
         CommentEntity result = commentEntityService.findById(id).orElse(null);
         if (result == null) {
@@ -38,7 +38,7 @@ public class CommentController {
         }
     }
 
-    @GetMapping("/comment/{comment}")
+    @GetMapping("/comment/comment/{comment}")
     public ResponseEntity<CommentEntity> getCommentByParam(@PathVariable String comment) {
         CommentEntity result = commentEntityService.findByComment(comment);
         if (result == null) {
